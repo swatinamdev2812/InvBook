@@ -27,6 +27,10 @@ InvBook is a .NET Core 8 Web API designed for inventory booking. It follows the 
   - Integrated **Serilog** for structured logging.
   - Custom **Exception Handling Middleware** to manage API errors.
 - **Docker Support**: The application is containerized for easy deployment.
+- **Unit Testing**:
+  - Uses xUnit for testing
+  - Moq is used to mock dependencies
+  - Tests cover scenarios for booking, max booking validation, and cancellation
 
 ## Technologies Used
 
@@ -37,6 +41,8 @@ InvBook is a .NET Core 8 Web API designed for inventory booking. It follows the 
 - **Docker**
 - **Serilog** (Logging)
 - **Exception Handling Middleware**
+- **xUnit (Testing)**
+- **Moq (Mocking Dependencies)**
 
 ## Getting Started
 
@@ -100,7 +106,24 @@ InvBook is a .NET Core 8 Web API designed for inventory booking. It follows the 
 
 - `POST /api/upload` - Upload inventory items (file-based import)
 
-## Contact
+  Testing
 
-For any inquiries, reach out via GitHub issues.
+### Unit Tests
+
+The project includes unit tests using **xUnit** and **Moq** for mocking dependencies. Key tests include:
+
+- Booking Tests
+  - Ensures an inventory item can be booked successfully.
+  - Validates that a member cannot exceed the maximum allowed bookings.
+  - Tests cancellation logic.
+
+- Mocking
+  - Moq is used to mock repositories for bookings, inventory, and members.
+  - Tests ensure repositories are called as expected.
+
+To run tests, execute:
+
+ ```sh
+  dotnet test --logger "console;verbosity=detailed"
+   ```
 
