@@ -50,7 +50,7 @@ InvBook is a .NET Core 8 Web API designed for inventory booking. It follows the 
 1. **Clone the repository**
 
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/swatinamdev2812/InvBook.git
    cd InvBook
    ```
 
