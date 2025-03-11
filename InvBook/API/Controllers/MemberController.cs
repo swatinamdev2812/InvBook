@@ -40,7 +40,7 @@ namespace InvBook.API.Controllers
             return Ok(member);
         }
 
-        [HttpGet]
+        [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
         {
             var members = await _mediator.Send(new GetAllMembersQuery());

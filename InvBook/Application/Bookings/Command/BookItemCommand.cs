@@ -30,7 +30,7 @@ namespace InvBook.Application.Bookings.Command
                 return "Member has reached the maximum booking limit";
 
             var item = await _inventoryRepository.GetByIdAsync(request.InventoryItemId);
-            if (item == null || item.RemainingCount <= 0)
+            if (item == null || item.RemainingCount <= 0 || item.ExpirationDate <= DateTime.Now)
                 return "Item not available";
 
             var booking = new Booking
